@@ -63,9 +63,20 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| Azure Postgres Database | Basic - Single Server | 50.14 USD |
+| Azure Service Bus | Basic Service Plan - B1 | $13.14 |
+| App Service | Basic | 0.05 USD |
+| Azure Functions | Consumption Tier | .... |
+| Storage Accounts | Storage (general purpose v1) | ... |
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+1. Azure Postgres Database: Basic (Single Server) Monthly Cost: 50.14 USD Explanation: Chose Basic tier for cost efficiency, providing a dedicated PostgreSQL server for smaller applications. Offers a balanced performance-to-cost ratio.
+2. App Service: Tier: Basic Monthly Cost: $0.05 Explanation: Selected Basic tier for low-cost hosting of the Flask-based web app. Provides sufficient resources for small to medium-sized applications, with easy deployment and scaling based on demand.
+
+3. Azure Functions: Tier: Consumption Monthly Cost: (Not specified) Explanation: Opted for Consumption tier for serverless architecture, incurring costs based on actual usage. Ideal for sporadic workloads, handling background processing in an event-driven manner.
+
+4. Azure Service Bus: Tier: Basic Service Plan - B1 Monthly Cost: $14.08 Explanation: Chose B1 for cost efficiency in message queueing. Facilitates asynchronous communication between the web app and Azure Functions.
+
+5. Storage Accounts: Tier: Storage (General Purpose V1) Monthly Cost: (Not specified) Explanation: Likely used for storing static assets, logs, or data. General-purpose v1 is a standard storage tier suitable for various needs, with costs depending on data stored and operations performed
+
+This architecture enables efficient handling of user interactions, background processing, and communication between components, ensuring a cost-effective and scalable solution for the application.
